@@ -5,6 +5,7 @@ MAINTAINER kimjeongchul
 RUN apt-get update -y
 RUN apt-get upgrade -y
 
+# Install program
 RUN apt-get install -y vim
 RUN apt-get install -y net-tools
 RUN apt-get install -y wget
