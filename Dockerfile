@@ -12,3 +12,4 @@ RUN apt-get install -y wget
 RUN apt-get install -y ssh
 RUN apt-get install -y htop
 RUN apt-get install -y iputils-ping
+RUN apt-get install -y sudo
