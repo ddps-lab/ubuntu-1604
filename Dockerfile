@@ -3,7 +3,7 @@ MAINTAINER kimjeongchul
 
 # Setup build environment for libpam
 RUN apt-get update -y
-RUN apt-get upgrade -y
+
 
 # Install program
 RUN apt-get install -y vim
