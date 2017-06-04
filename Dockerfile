@@ -13,3 +13,4 @@ RUN apt-get install -y ssh
 RUN apt-get install -y htop
 RUN apt-get install -y iputils-ping
 RUN apt-get install -y sudo
+RUN apt-get install -y git
