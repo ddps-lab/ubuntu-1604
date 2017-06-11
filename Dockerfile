@@ -14,3 +14,9 @@ RUN apt-get install -y htop
 RUN apt-get install -y iputils-ping
 RUN apt-get install -y sudo
 RUN apt-get install -y git
+
+COPY bootstrap.sh /etc/bootstrap.sh
+RUN chown root.root /etc/bootstrap.sh
+RUN chmod 700 /etc/bootstrap.sh
+
+ENTRYPOINT ["/etc/bootstrap.sh"]
