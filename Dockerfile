@@ -15,6 +15,7 @@ RUN apt-get install -y iputils-ping
 RUN apt-get install -y sudo
 RUN apt-get install -y git
 RUN apt-get install -y make
+RUN apt-get install -y build-essential
 
 COPY bootstrap.sh /etc/bootstrap.sh
 RUN chown root.root /etc/bootstrap.sh
