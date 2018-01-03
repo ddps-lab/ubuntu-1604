@@ -6,17 +6,14 @@ RUN apt-get update -y
 
 
 # Install program
-RUN apt-get install -y vim
-RUN apt-get install -y net-tools
-RUN apt-get install -y wget
-RUN apt-get install -y ssh
-RUN apt-get install -y htop
-RUN apt-get install -y iputils-ping
-RUN apt-get install -y sudo
-RUN apt-get install -y git
-RUN apt-get install -y make
-RUN apt-get install -y build-essential
-
+RUN \
+  apt-get update && \
+  apt-get -y upgrade && \
+  apt-get install -y build-essential && \
+  apt-get install -y software-properties-common && \
+  apt-get install -y vim net-tools wget ssh htop iputils-ping sudo git make curl man unzip  && \
+  rm -rf /var/lib/apt/lists/*
+  
 COPY bootstrap.sh /etc/bootstrap.sh
 RUN chown root.root /etc/bootstrap.sh
 RUN chmod 700 /etc/bootstrap.sh
