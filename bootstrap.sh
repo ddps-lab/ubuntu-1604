@@ -17,13 +17,18 @@ then
         sudo -u "$NEW_USER" cat /tmp/id_rsa.pub >> /home/"$NEW_USER"/.ssh/authorized_keys
     fi
     sudo -u "$NEW_USER" chmod 600 /home/"$NEW_USER"/.ssh/authorized_keys
+    echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 fi
 
+/usr/sbin/sshd -D
+
 CMD=${1:-"exit 0"}
+
 if [[ "$CMD" == "-d" ]];
 then
     service sshd stop
-    /usr/sbin/sshd -D -d
+    /usr/sbin/sshd -D
 else
     /bin/bash -c "$*"
 fi
+
